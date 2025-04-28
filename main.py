@@ -35,6 +35,11 @@ async def root(request: Request):
         logger.error(f"Error rendering template: {e}")
         raise e
 
+
+@app.api_route("/sitemap", response_class=HTMLResponse, methods=['GET'])
+async def root(request: Request):
+    return templates.TemplateResponse("sitemap.xml", {"request": request})
+
 # If running locally or in development, use uvicorn directly
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 8000))
