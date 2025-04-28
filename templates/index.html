@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitatrack</title>
+  <link rel="icon" href="../static/favicon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    body {
+      background-color: black;
+      color: #fff !important;
+      font-family: 'Figtree', sans-serif;
+      text-align: left;
+      overflow-x: hidden; /* Prevent horizontal wiggle */
+      overflow-y: scroll; /* Always reserve scrollbar space */
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: black;
+      border-bottom: 0.2px solid #676767;
+    }
+
+    .sticky-nav .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: .01rem 3rem;
+    }
+
+    .sticky-nav .logo-icon {
+      height: 5rem;
+      width: auto;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #000;
+      border-bottom: 0.2px solid #676767;
+    }
+
+
+   .hero-section {
+  background-color: #000;
+}
+
+.hero-title {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  color: #A9A9A9;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Telegram button stays green; Trustpilot button is white with dark text */
+.btn-light.text-dark {
+  background-color: #fff;
+}
+
+.hero-image .glow-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    to right,
+    rgba(0,128,255,0.1) 100%
+  );
+  border-radius: 50%;
+  filter: blur(150px);
+  z-index: 1;
+}
+
+.hero-image img {
+  position: relative;
+  z-index: 2;
+}
+
+  .features-section {
+  background-color: #000000;
+  border-top: 0.2px solid #676767;
+}
+    .features-section h2 {
+      color: #FFFFFF;
+    }
+    .features-section p.lead {
+      color: #A9A9A9;
+    }
+    .feature-item .bi {
+      font-size: 2rem;
+      color: #3674B5;
+    }
+    .feature-item h5 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: #FFFFFF;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+
+    .setup-section {
+      background-color: #000000;
+      border-top: 0.2px solid #676767;
+    }
+    .setup-section h2 {
+      color: #FFFFF;
+    }
+    .step-item {
+      position: relative;
+      padding-top: 2rem;
+      text-align: left;
+    }
+    .step-number {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.1);
+      color: #A9A9A9;
+      font-weight: bold;
+      text-align: center;
+    }
+    .step-item h5 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: #FFFFFF;
+    }
+    .step-item p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .open-bot-btn {
+      margin-top: 1rem;
+    }
+
+
+    .footer-section {
+        background-color: #000;
+        border-top: 1px solid #333;
+      }
+    .footer-section .container {
+        padding: 1rem 0;
+      }
+    .footer-section small {
+      font-size: 0.9rem;
+      display: block;
+      text-align: center;
+      color: #A9A9A9;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+<!-- Sticky Navbar with Logo Only -->
+<nav class="navbar navbar-expand-lg sticky-nav">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <!-- your inline SVG only; no <img> needed -->
+      <svg
+        class="logo-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 480 270"
+        preserveAspectRatio="xMidYMid meet">
+        <defs><clipPath id="161386235b"><path d="M 27.164062 111.414062 L 64.664062 111.414062 L 64.664062 148.164062 L 27.164062 148.164062 Z M 27.164062 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="1cb475e7ab"><path d="M 85.21875 111.414062 L 94.96875 111.414062 L 94.96875 148.164062 L 85.21875 148.164062 Z M 85.21875 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="6b3bc5a045"><path d="M 115.519531 111.414062 L 146.269531 111.414062 L 146.269531 148.164062 L 115.519531 148.164062 Z M 115.519531 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="924e1ccc26"><path d="M 166.753906 111.414062 L 202.003906 111.414062 L 202.003906 148.164062 L 166.753906 148.164062 Z M 166.753906 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="b494106f33"><path d="M 222.574219 111.414062 L 253.324219 111.414062 L 253.324219 148.164062 L 222.574219 148.164062 Z M 222.574219 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="588f5ebf0a"><path d="M 276 111.414062 L 301.554688 111.414062 L 301.554688 148.164062 L 276 148.164062 Z M 276 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="0871fc908b"><path d="M 273.804688 117 L 281 117 L 281 148.164062 L 273.804688 148.164062 Z M 273.804688 117 " clip-rule="nonzero"/></clipPath><clipPath id="43dcf9b1b4"><path d="M 321.824219 111.414062 L 357.074219 111.414062 L 357.074219 148.164062 L 321.824219 148.164062 Z M 321.824219 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="8c2d61dac3"><path d="M 377.644531 111.414062 L 408.394531 111.414062 L 408.394531 148.164062 L 377.644531 148.164062 Z M 377.644531 111.414062 " clip-rule="nonzero"/></clipPath><clipPath id="b5cfe45ef2"><path d="M 428.875 111.414062 L 462.625 111.414062 L 462.625 148.164062 L 428.875 148.164062 Z M 428.875 111.414062 " clip-rule="nonzero"/></clipPath></defs><g clip-path="url(#161386235b)"><path fill="#ffffff" d="M 41.929688 123.128906 L 43.105469 118.761719 L 62.976562 118.761719 L 64.96875 111.417969 L 37.019531 111.417969 L 33.875 123.128906 Z M 27.164062 148.125 L 35.238281 148.125 L 39.066406 133.914062 L 56.578125 133.914062 L 58.519531 126.574219 L 32.953125 126.574219 Z M 27.164062 148.125 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#1cb475e7ab)"><path fill="#ffffff" d="M 90.242188 121.558594 C 93.003906 121.558594 95.253906 119.308594 95.253906 116.546875 C 95.253906 113.78125 93.003906 111.535156 90.242188 111.535156 C 87.476562 111.535156 85.226562 113.78125 85.226562 116.546875 C 85.226562 119.308594 87.476562 121.558594 90.242188 121.558594 Z M 85.21875 130 L 85.21875 148.011719 L 95.261719 148.011719 L 95.261719 121.082031 L 85.21875 130 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#6b3bc5a045)"><path fill="#ffffff" d="M 126.871094 148.121094 L 126.871094 125.070312 L 136.28125 125.070312 L 136.28125 148.121094 Z M 121.859375 120.839844 L 115.523438 111.429688 L 146.496094 111.429688 L 146.496094 120.839844 Z M 121.859375 120.839844 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#924e1ccc26)"><path fill="#ffffff" d="M 175.78125 123.351562 L 166.96875 146.941406 C 166.757812 147.519531 167.179688 148.128906 167.792969 148.128906 L 175.289062 148.128906 C 175.660156 148.128906 175.992188 147.894531 176.117188 147.542969 L 178.210938 141.621094 L 180.742188 134.03125 C 180.800781 133.851562 180.804688 133.660156 180.746094 133.480469 L 177.441406 123.386719 C 177.183594 122.59375 176.074219 122.570312 175.78125 123.351562 Z M 188.222656 111.414062 L 181.539062 111.414062 C 180.933594 111.414062 180.507812 112.011719 180.707031 112.582031 L 184.460938 123.40625 L 184.46875 123.390625 L 190.628906 141.621094 L 192.765625 147.550781 C 192.890625 147.898438 193.21875 148.128906 193.589844 148.128906 L 201.273438 148.128906 C 201.886719 148.128906 202.3125 147.519531 202.097656 146.945312 L 189.046875 111.984375 C 188.917969 111.640625 188.589844 111.414062 188.222656 111.414062 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#b494106f33)"><path fill="#ffffff" d="M 233.925781 148.121094 L 233.925781 125.070312 L 243.335938 125.070312 L 243.335938 148.121094 Z M 228.910156 120.839844 L 222.574219 111.429688 L 253.546875 111.429688 L 253.546875 120.839844 Z M 228.910156 120.839844 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#588f5ebf0a)"><path fill="#ffffff" d="M 279.25 118.074219 L 289.320312 118.074219 C 290.042969 118.074219 290.671875 118.25 291.210938 118.605469 C 291.75 118.957031 292.164062 119.460938 292.460938 120.117188 C 292.753906 120.773438 292.902344 121.53125 292.902344 122.386719 C 292.882812 123.246094 292.726562 124.003906 292.433594 124.660156 C 292.140625 125.316406 291.722656 125.820312 291.183594 126.171875 C 290.648438 126.527344 290.023438 126.703125 289.320312 126.703125 L 282.808594 126.703125 L 293.476562 148.121094 L 301.566406 148.128906 L 292.785156 133 C 293.640625 132.773438 294.4375 132.441406 295.183594 132 C 296.722656 131.089844 297.910156 129.808594 298.753906 128.152344 C 299.59375 126.496094 300.015625 124.574219 300.015625 122.386719 C 300.015625 120.203125 299.59375 118.28125 298.753906 116.625 C 297.910156 114.96875 296.726562 113.683594 295.195312 112.777344 C 293.667969 111.867188 291.890625 111.414062 289.875 111.414062 L 276.242188 111.414062 L 279.25 118.074219 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#0871fc908b)"><path fill="#ffffff" d="M 273.804688 117.339844 L 273.804688 148.121094 L 280.714844 148.121094 L 280.714844 133.832031 L 273.804688 117.339844 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#43dcf9b1b4)"><path fill="#ffffff" d="M 330.851562 123.351562 L 322.042969 146.941406 C 321.828125 147.519531 322.25 148.128906 322.863281 148.128906 L 330.359375 148.128906 C 330.730469 148.128906 331.0625 147.894531 331.1875 147.542969 L 333.28125 141.621094 L 335.8125 134.03125 C 335.875 133.851562 335.875 133.660156 335.816406 133.480469 L 332.511719 123.386719 C 332.253906 122.59375 331.144531 122.570312 330.851562 123.351562 Z M 343.296875 111.414062 L 336.609375 111.414062 C 336.003906 111.414062 335.582031 112.011719 335.777344 112.582031 L 339.535156 123.40625 L 339.539062 123.390625 L 345.699219 141.621094 L 347.835938 147.550781 C 347.960938 147.898438 348.292969 148.128906 348.664062 148.128906 L 356.34375 148.128906 C 356.957031 148.128906 357.382812 147.519531 357.167969 146.945312 L 344.117188 111.984375 C 343.992188 111.640625 343.660156 111.414062 343.296875 111.414062 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#8c2d61dac3)"><path fill="#ffffff" d="M 389.675781 148.105469 C 383.042969 148.105469 377.644531 142.707031 377.644531 136.074219 L 377.644531 124.882812 L 387.050781 124.882812 L 387.050781 136.230469 C 387.050781 137.589844 388.15625 138.699219 389.519531 138.699219 L 402.390625 138.699219 L 408.605469 148.105469 Z M 387.34375 120.839844 L 381.011719 111.433594 L 402.355469 111.433594 L 408.617188 120.839844 Z M 387.34375 120.839844 " fill-opacity="1" fill-rule="nonzero"/></g><g clip-path="url(#b5cfe45ef2)"><path fill="#ffffff" d="M 428.894531 148.128906 L 436.96875 148.128906 L 436.96875 138.429688 L 461.597656 111.414062 L 451.851562 111.414062 L 436.972656 127.460938 L 436.972656 111.414062 L 428.894531 111.414062 Z M 443.929688 136.550781 L 452.613281 148.128906 L 462.3125 148.128906 L 448.957031 130.808594 Z M 443.929688 136.550781 " fill-opacity="1" fill-rule="evenodd"/></g>
+      </svg>
+    </a>
+  </div>
+</nav>
+
+
+<!-- Main Content -->
+<section class="hero-section py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- text + CTAs -->
+      <div class="col-12 col-md-6">
+        <h1 class="hero-title mb-3">
+          Instant Calorie Tracking<br>
+          Smarter Nutrition, Effortless Logging
+        </h1>
+        <p class="hero-subtitle lead mb-4">
+            Just type what you ate and get an instant calorie breakdown.<br>
+            No manual calculations—Fitatrack parses your entries in seconds.<br>
+            Keep tabs on your intake and crush your health goals.
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="https://t.me/fitatrack_bot" class="btn btn-outline-primary btn-lg">
+            Try For Free on Telegram&nbsp;<i class="bi bi-telegram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- phone mockup + glow -->
+      <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+        <div class="hero-image position-relative d-inline-block">
+          <div class="glow-background"></div>
+          <img src="../static/phone.gif"
+               alt="Fitatrack bot on phone"
+               class="img-fluid">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5" data-aos="fade-up" data-aos-delay="100">
+  <div class="container text-center">
+    <!-- Title + subtitle -->
+    <h2 class="fw-bold mb-3">
+       Effortless Calorie Tracking for Every Meal
+    </h2>
+    <p class="lead mb-5">
+      Fitatrack lets you log what you eat in seconds—no guesswork, no menus. Just type and go.
+    </p>
+
+    <!-- 4 features -->
+    <div class="row g-4">
+      <div class="col-6 col-md-3">
+        <div class="feature-item">
+          <i class="bi bi-pencil"></i>
+          <h5>Quick Text Logging</h5>
+          <p>
+            Simply type in your meal details and see calories counted instantly.
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-item">
+          <i class="bi bi-bell"></i>
+          <h5>Meal Reminders</h5>
+          <p>
+            Scheduled prompts so you never miss logging a meal or snack.
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-item">
+          <i class="bi bi-gear"></i>
+          <h5>Custom Goals</h5>
+          <p>
+            Set your own calorie and macro targets, and we’ll keep you on track.
+          </p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="feature-item">
+          <i class="bi bi-chat-dots"></i>
+          <h5>Live Support</h5>
+          <p>
+            Having any questions or need help with Fitatrack? Our team is ready to assist you anytime to make your calorie tracking easy and stress-free.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 5-Minute Setup Section -->
+<section class="setup-section py-5" data-aos="fade-up" data-aos-delay="200">
+  <div class="container">
+    <!-- Title -->
+    <h2 class="fw-bold mb-4">
+      5 Minutes to Set Up – Start Tracking Your Calories Effortlessly
+    </h2>
+
+    <!-- Steps Row -->
+    <div class="row g-4">
+      <!-- Step 1 -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <h5>Launch Fitatrack on Telegram</h5>
+          <p>
+            Follow the link below and tap the “Start” button. You’ll get a welcome message with simple instructions.
+          </p>
+          <a
+            href="https://t.me/fitatrack_bot"
+            class="btn btn-outline-primary open-bot-btn"
+            target="_blank"
+          >
+            Open the Bot&nbsp;<i class="bi bi-telegram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <h5>Create Your Account</h5>
+          <p>
+            Set up your personal profile with basic details like your name, weight, height, and goals.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <h5>Log Your Meals</h5>
+          <p>
+            Quickly log what you eat by simply typing it in — Fitatrack will instantly calculate the calories for you.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <h5>Stay on Track and Reach Your Goals</h5>
+          <p>
+            Monitor your daily intake, make smarter food choices, and achieve your fitness targets with ease.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- place this just before </body> -->
+<footer class="footer-section py-4">
+  <div class="container text-center">
+    <small>Copyright © {{year}} Fitatrack</small>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true
+  });
+</script>
+
+</body>
+</html>
