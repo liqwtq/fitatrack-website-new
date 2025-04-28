@@ -15,7 +15,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory='templates')
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.post("/", response_class=HTMLResponse)
 async def root(request: Request):
     this_year = datetime.now().year
     return templates.TemplateResponse("index.html", {"request": request, "year":this_year})
