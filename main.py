@@ -4,6 +4,7 @@ import uvicorn
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from starlette.responses import PlainTextResponse
 from starlette.staticfiles import StaticFiles
 from datetime import datetime
 
@@ -39,6 +40,12 @@ async def root(request: Request):
 @app.api_route("/sitemap", response_class=HTMLResponse, methods=['GET'])
 async def root(request: Request):
     return templates.TemplateResponse("sitemap.xml", {"request": request})
+
+@app.get("/robots.txt", response_class=PlainTextResponse)
+async def robots_txt():
+    content = """User-agent: *
+Disallow:"""
+    return content
 
 # If running locally or in development, use uvicorn directly
 if __name__ == "__main__":
