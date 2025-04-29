@@ -6,7 +6,7 @@
   <meta name="author" content="Fitatrack">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="Lf2wyJ82psAn2cvHu4J74vY__4GlhxnohzhUmcbDEj8" />
-  <title>Fitatrack</title>
+  <title>Fitatrack - Effortless Calorie Tracking with Telegram</title>
   <meta name="description" content="Fitatrack is your personal assistant for tracking calories and staying on top of your fitness journey. Our easy-to-use Telegram bot helps you monitor your daily calorie intake, providing personalized insights and tips to help you achieve your health goals. Whether you're looking to lose weight, maintain a healthy lifestyle, or improve your eating habits, Fitatrack is here to help you stay on track with your fitness journey.">
   <meta name="title" content="Fitatrack - Your Personal Calorie Tracker">
   <meta name="keywords" content="Fitatrack, Calorie tracking, Telegram bot, Fitness tracker, Health and wellness, Calorie counter, Weight loss tracker, Personalized fitness, Healthy eating, Nutrition assistant, Daily calorie intake, Fitness app, Health goals, Weight management" />
@@ -93,10 +93,36 @@
   z-index: 1;
 }
 
-.hero-image img {
+.hero-image {
+  /* ensure position-relative is present */
   position: relative;
-  z-index: 2;
 }
+
+/* make video a bit smaller & responsive */
+.hero-video {
+  position: relative;
+  z-index: 1;
+  width: 60%;        /* scale down to 80% of container */
+  max-width: 300px;   /* optional hard cap */
+  height: auto;
+  display: block;
+  margin: 0 auto;     /* center within container */
+}
+
+/* overlay SVG on top of video */
+.hero-svg {
+  position: absolute;
+  top: 50%;           /* adjust to center vertically */
+  left: 50%;          /* adjust to center horizontally */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 85%;         /* tweak to fit nicely over video */
+  max-width: 320px;   /* optional to control max size */
+  height: auto;
+  pointer-events: none; /* let clicks pass through to video if needed */
+}
+
+
 
   .features-section {
   background-color: #000000;
@@ -186,7 +212,7 @@
 <!-- Sticky Navbar with Logo Only -->
 <nav class="navbar navbar-expand-lg sticky-nav">
   <div class="container-fluid">
-    <a class="navbar-brand" >
+    <a class="navbar-brand"  href="https://fitatrack.up.railway.app/">
       <!-- your inline SVG only; no <img> needed -->
       <svg
         class="logo-icon"
@@ -224,14 +250,33 @@
       </div>
 
       <!-- phone mockup + glow -->
-      <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
-        <div class="hero-image position-relative d-inline-block">
-          <div class="glow-background"></div>
-          <img src="../static/phone.gif"
-               alt="Fitatrack bot on phone"
-               class="img-fluid">
-        </div>
-      </div>
+    <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+  <div class="hero-image position-relative d-inline-block">
+    <!-- Glow background below -->
+    <div class="glow-background"></div>
+
+    <!-- Your video, slightly smaller -->
+    <video
+      class="hero-video"
+      autoplay
+      loop
+      muted
+      playsinline
+    >
+      <source src="../static/telegram.mp4" type="video/mp4">
+      Your browser doesn’t support HTML5 video.
+    </video>
+
+    <!-- SVG “phone” overlaid on top -->
+    <img
+      src="../static/phone.svg"
+      alt="Phone frame"
+      class="hero-svg"
+    />
+  </div>
+</div>
+
+
 
     </div>
   </div>
