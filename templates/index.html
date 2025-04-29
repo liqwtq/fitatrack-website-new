@@ -72,11 +72,17 @@
   line-height: 1.6;
 }
 
-/* Telegram button stays green; Trustpilot button is white with dark text */
 .btn-light.text-dark {
   background-color: #fff;
 }
 
+/* Container for the glow, video, and SVG */
+.hero-image {
+  position: relative;
+  overflow: visible; /* allow the glow to spill out */
+}
+
+/* Glow background—radial gradient + smaller blur for mobile */
 .hero-image .glow-background {
   position: absolute;
   top: 50%;
@@ -84,42 +90,40 @@
   width: 140%;
   height: 140%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(
-    to right,
-    rgba(0,128,255,0.1) 100%
+  background: radial-gradient(
+    circle,
+    rgba(0, 128, 255, 0.15) 0%,
+    rgba(0, 128, 255, 0) 80%
   );
+  filter: blur(80px);
   border-radius: 50%;
-  filter: blur(150px);
-  z-index: 1;
+  z-index: 0;
+  pointer-events: none;  /* let all clicks/taps pass through */
 }
 
-.hero-image {
-  /* ensure position-relative is present */
-  position: relative;
-}
-
-/* make video a bit smaller & responsive */
+/* Video sits above the glow */
 .hero-video {
   position: relative;
   z-index: 1;
-  width: 60%;        /* scale down to 80% of container */
+  width: 60%;        /* scale down to 60% of container */
   max-width: 300px;   /* optional hard cap */
   height: auto;
   display: block;
   margin: 0 auto;     /* center within container */
+  pointer-events: none; /* disable pointer events on the video layer */
 }
 
-/* overlay SVG on top of video */
+/* SVG “phone” frame overlays the video */
 .hero-svg {
   position: absolute;
-  top: 50%;           /* adjust to center vertically */
-  left: 50%;          /* adjust to center horizontally */
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  width: 85%;         /* tweak to fit nicely over video */
-  max-width: 320px;   /* optional to control max size */
+  width: 85%;         /* adjust to fit over video */
+  max-width: 320px;   /* optional hard cap */
   height: auto;
-  pointer-events: none; /* let clicks pass through to video if needed */
+  pointer-events: none; /* ensure clicks hit underlying buttons */
 }
 
 
