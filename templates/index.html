@@ -21,6 +21,205 @@
 </head>
 <body>
 
+<style>
+
+body {
+      background-color: black;
+      color: #fff !important;
+      font-family: 'Figtree', sans-serif;
+      text-align: left;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: black;
+      border-bottom: 0.2px solid #676767;
+    }
+
+    .sticky-nav .navbar-brand {
+      display: flex;
+      align-items: center;
+      padding: .01rem 3rem;
+    }
+
+    .sticky-nav .logo-icon {
+      height: 5rem;
+      width: auto;
+    }
+
+    .sticky-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: #000;
+      border-bottom: 0.2px solid #676767;
+    }
+
+
+   .hero-section {
+  background-color: #000;
+}
+
+.hero-title {
+  font-family: 'Figtree', sans-serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  color: #A9A9A9;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.btn-light.text-dark {
+  background-color: #fff;
+}
+
+    .hero-image {
+      position: relative;
+      overflow: visible;
+    }
+
+    .hero-image .glow-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 140%;
+      height: 140%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(
+        circle,
+        rgba(0, 128, 255, 0.15) 0%,
+        rgba(0, 128, 255, 0) 80%
+      );
+      filter: blur(80px);
+      border-radius: 50%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* New wrapper for video + SVG */
+    .hero-content {
+      margin-top: 30px; /* <-- Add top margin here */
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    /* Video */
+    .hero-video {
+      position: relative;
+      z-index: 1;
+      width: 75%;
+      max-width: 360px;
+      height: auto;
+      aspect-ratio: 9/16; /* Reserve space for video */
+      display: block;
+      margin: 0 auto;
+      pointer-events: none;
+    }
+
+    /* SVG overlay */
+    .hero-svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      width: 90%;
+      max-width: 320px;
+      height: auto;
+      pointer-events: none;
+    }
+
+
+
+  .features-section {
+  background-color: #000000;
+  border-top: 0.2px solid #676767;
+}
+    .features-section h2 {
+      color: #FFFFFF;
+    }
+    .features-section p.lead {
+      color: #A9A9A9;
+    }
+    .feature-item .bi {
+      font-size: 2rem;
+      color: #3674B5;
+    }
+    .feature-item h5 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: #FFFFFF;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+
+    .setup-section {
+      background-color: #000000;
+      border-top: 0.2px solid #676767;
+    }
+    .setup-section h2 {
+      color: #FFFFF;
+    }
+    .step-item {
+      position: relative;
+      padding-top: 2rem;
+      text-align: left;
+    }
+    .step-number {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      line-height: 2rem;
+      border-radius: 50%;
+      background-color: rgba(255,255,255,0.1);
+      color: #A9A9A9;
+      font-weight: bold;
+      text-align: center;
+    }
+    .step-item h5 {
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+      color: #FFFFFF;
+    }
+    .step-item p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .open-bot-btn {
+      margin-top: 1rem;
+    }
+
+
+    .footer-section {
+        background-color: #000;
+        border-top: 1px solid #333;
+      }
+    .footer-section .container {
+        padding: 1rem 0;
+      }
+    .footer-section small {
+      font-size: 0.9rem;
+      display: block;
+      text-align: center;
+      color: #A9A9A9;
+    }
+
+
+</style>
+
 <!-- Sticky Navbar with Logo Only -->
 <nav class="navbar navbar-expand-lg sticky-nav">
   <div class="container-fluid">
@@ -62,31 +261,33 @@
       </div>
 
       <!-- phone mockup + glow -->
-    <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+   <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
   <div class="hero-image position-relative d-inline-block">
-    <!-- Glow background below -->
     <div class="glow-background"></div>
 
-    <!-- Your video, slightly smaller -->
-    <video
-      class="hero-video"
-      autoplay
-      loop
-      muted
-      playsinline aria-label="telegram video"
-    >
-      <source src="../static/telegram.MP4" type="video/mp4">
-      Your browser doesn’t support HTML5 video.
-    </video>
+    <div class="hero-content"> <!-- New wrapper around video + SVG -->
+      <video
+        class="hero-video"
+        autoplay
+        loop
+        muted
+        playsinline
+        aria-label="telegram video"
+      >
+        <source src="../static/telegram.MP4" type="video/mp4">
+        Your browser doesn’t support HTML5 video.
+      </video>
 
-    <!-- SVG “phone” overlaid on top -->
-    <img
-      src="../static/phone.svg"
-      alt="Phone frame"
-      class="hero-svg"
-    />
+      <img
+        src="../static/phone.svg"
+        alt="Phone frame"
+        class="hero-svg"
+      />
+    </div>
+
   </div>
 </div>
+
 
 
 
