@@ -1,10 +1,15 @@
+html{
+   background-color: black;
+}
+
+
 body {
       background-color: black;
       color: #fff !important;
       font-family: 'Figtree', sans-serif;
       text-align: left;
-      overflow-x: hidden; /* Prevent horizontal wiggle */
-      overflow-y: scroll; /* Always reserve scrollbar space */
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
 
     .sticky-nav {
